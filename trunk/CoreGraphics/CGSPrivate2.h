@@ -9,7 +9,11 @@
 //    Austin Sarner: Shadows
 //    Jason Harris: Filters, Shadows, Regions
 //    Kevin Ballard: Warping
+//    Steve Voida: Workspace Notifications
 //
+//  Changes:
+//    2.1 - Added spaces notifications
+//    2.0 - Original Release
 
 #include <Carbon/Carbon.h>
 
@@ -97,8 +101,6 @@ extern CGError CGSSetWindowProperty(const CGSConnection cid, CGSWindow wid, CGSV
 // Owner
 extern CGError CGSGetWindowOwner(const CGSConnection cid, const CGSWindow wid, CGSConnection *ownerCid);
 extern CGError CGSConnectionGetPID(const CGSConnection cid, pid_t *pid, const CGSConnection ownerCid);
-
-
 
 #pragma mark Window Tags
 
@@ -199,6 +201,31 @@ extern CGError CGSGetWindowWorkspace(const CGSConnection cid, const CGSWindow wi
 extern CGError CGSSetWorkspace(const CGSConnection cid, CGSWorkspace workspace);
 
 extern CGError CGSSetWorkspaceWithTransition(const CGSConnection cid, CGSWorkspace workspace, CGSTransitionType transition, CGSTransitionOption subtype, float time);
+
+
+// Internal CoreGraphics typedefs
+
+/* Prototype for the Spaces change notification callback.
+ *
+ * data1 -- returns whatever value is passed to data1 parameter in CGSRegisterConnectionNotifyProc
+ * data2 -- indeterminate (always a large negative integer; seems to be limited to a small set of values)
+ * data3 -- indeterminate (always returns the number '4' for me)
+ * userParameter -- returns whatever value is passed to userParameter in CGSRegisterConnectionNotifyProc
+ */
+typedef void (*CGConnectionNotifyProc)(int data1, int data2, int data3, void* userParameter);
+
+/* Register a callback function to receive notifications about when the current Space is changing.
+ *
+ * cid -- Current connection
+ * function -- A pointer to the intended callback function (must be in C; cannot be an Objective-C selector)
+ * data1 -- indeterminate (this is hard-coded to 0x579 in Spaces.menu...perhpas some kind of event filter code?)
+ * userParameter -- pointer to user-defined auxiliary information structure; passed directly to callback proc
+ */
+extern CGError CGSRegisterConnectionNotifyProc(const CGSConnection cid, CGConnectionNotifyProc function, int data1, void* userParameter);
+
+
+
+
 
 # pragma mark Miscellaneous
 
