@@ -199,11 +199,8 @@ extern CGError CGSReleaseTransition(const CGSConnection cid, int transitionHandl
 extern CGError CGSGetWorkspace(const CGSConnection cid, CGSWorkspace *workspace);
 extern CGError CGSGetWindowWorkspace(const CGSConnection cid, const CGSWindow wid, CGSWorkspace *workspace);
 extern CGError CGSSetWorkspace(const CGSConnection cid, CGSWorkspace workspace);
-
 extern CGError CGSSetWorkspaceWithTransition(const CGSConnection cid, CGSWorkspace workspace, CGSTransitionType transition, CGSTransitionOption subtype, float time);
 
-
-// Internal CoreGraphics typedefs
 
 /* Prototype for the Spaces change notification callback.
  *
@@ -221,6 +218,9 @@ typedef void (*CGConnectionNotifyProc)(int data1, int data2, int data3, void* us
  * data1 -- indeterminate (this is hard-coded to 0x579 in Spaces.menu...perhpas some kind of event filter code?)
  * userParameter -- pointer to user-defined auxiliary information structure; passed directly to callback proc
  */
+
+// For spaces notifications: CGSRegisterConnectionNotifyProc(_CGSDefaultConnection(), spacesCallback, 1401, (void*)userInfo);
+
 extern CGError CGSRegisterConnectionNotifyProc(const CGSConnection cid, CGConnectionNotifyProc function, int data1, void* userParameter);
 
 
