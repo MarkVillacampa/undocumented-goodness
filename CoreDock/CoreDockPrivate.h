@@ -6,13 +6,14 @@
 // Based on CoreDockPrivate.h from http://www.cocoadev.com/index.pl?DockPrefsPrivate
 // 
 // Contributors:
+//   Alacatia Labs: Initial version posted at http://www.cocoadev.com/index.pl?DockPrefsPrivate
 //   Tony Arnold: CoreDockGetWorkspacesEnabled, CoreDockSetWorkspacesEnabled, CoreDockSetWorkspacesCount
 //   Steve Voida: CoreDockGetWorkspacesCount
 // 
 // Changes:
+//   1.1 - Added attribution for Alacatia labs as originator
+//       - Removed unnecessary reliance on CGSPrivate.h
 //   1.0 - Initial release
-
-#import "../CoreGraphics/CGSPrivate.h"
 
 typedef enum {
 	kCoreDockOrientationTop = 1,
@@ -49,12 +50,13 @@ extern void CoreDockSetAutoHideEnabled(Boolean flag);
 
 extern Boolean CoreDockIsMagnificationEnabled(void);
 extern void CoreDockSetMagnificationEnabled(Boolean flag);
+
 // Magnification ranges from 0.0 to 1.0.
 extern float CoreDockGetMagnificationSize(void);
 extern void CoreDockSetMagnificationSize(float newSize);
 
 extern Boolean CoreDockGetWorkspacesEnabled(void);
-extern void CoreDockSetWorkspacesEnabled(Boolean); // Untested!
+extern void CoreDockSetWorkspacesEnabled(Boolean); // Untested: use with caution
 
 extern void CoreDockGetWorkspacesCount(int *rows, int *cols);
-extern void CoreDockSetWorkspacesCount(int rows, int cols);	// Untested!
+extern void CoreDockSetWorkspacesCount(int rows, int cols);	// Untested: use with caution
