@@ -1,5 +1,5 @@
 //
-//  CGSPrivate2.h
+//  CGSPrivate.h
 //  Header file for undocumented CoreGraphics SPI
 //
 //  Arranged by Nicholas Jitkoff
@@ -9,9 +9,11 @@
 //    Austin Sarner: Shadows
 //    Jason Harris: Filters, Shadows, Regions
 //    Kevin Ballard: Warping
-//    Steve Voida: Workspace Notifications
+//    Steve Voida: Workspace notifications
+//    Tony Arnold: Workspaces notifications enum filters
 //
 //  Changes:
+//    2.2 - Moved back to CGSPrivate, added more enums to the CGSConnectionNotifyEvent
 //    2.1 - Added spaces notifications
 //    2.0 - Original Release
 
@@ -202,14 +204,13 @@ extern CGError CGSSetWorkspace(const CGSConnection cid, CGSWorkspace workspace);
 extern CGError CGSSetWorkspaceWithTransition(const CGSConnection cid, CGSWorkspace workspace, CGSTransitionType transition, CGSTransitionOption subtype, float time);
 
 
-
 typedef enum {
 	CGSConnectionNotifyEventUnknown1 = 100,
 	CGSConnectionNotifyEventUnknown2 = 101,
 	CGSConnectionNotifyEventUnknown3 = 102,
 	CGSConnectionNotifyEventUnknown4 = 103,
-	CGSConnectionNotifyEventUnknown5 = 106,
-	CGSConnectionNotifyEventUnknown6 = 107,
+	CGSClientEnterFullscreen = 106,
+	CGSClientExitFullscreen = 107,
 	CGSConnectionNotifyEventUnknown7 = 750,
 	CGSConnectionNotifyEventUnknown8 = 751,
 	CGSWorkspacesDisabledEvent = 761,
@@ -218,14 +219,15 @@ typedef enum {
 	CGSConnectionNotifyEventUnknown10 = 764,
 	CGSConnectionNotifyEventUnknown11 = 806,
 	CGSConnectionNotifyEventUnknown12 = 807,
+	CGSConnectionNotifyEventUnknown13 = 1201,	// Seems to occur when applications are launched/quit. Is this a connection being created/destroyed by the application to the window server?
 	CGSWorkspaceChangedEvent = 1401,
-	CGSConnectionNotifyEventUnknown13 = 1409,
-	CGSConnectionNotifyEventUnknown14 = 1410,
-	CGSConnectionNotifyEventUnknown15 = 1411,
-	CGSConnectionNotifyEventUnknown16 = 1412,
-	CGSConnectionNotifyEventUnknown17 = 1500,
-	CGSConnectionNotifyEventUnknown18 = 1501,
-	CGSConnectionNotifyEventUnknown19 = 1700
+	CGSConnectionNotifyEventUnknown14 = 1409,
+	CGSConnectionNotifyEventUnknown15 = 1410,
+	CGSConnectionNotifyEventUnknown16 = 1411,
+	CGSConnectionNotifyEventUnknown17 = 1412,
+	CGSConnectionNotifyEventUnknown18 = 1500,
+	CGSConnectionNotifyEventUnknown19 = 1501,
+	CGSConnectionNotifyEventUnknown20 = 1700
 } CGSConnectionNotifyEvent;
 
 
