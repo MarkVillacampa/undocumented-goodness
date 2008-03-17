@@ -202,6 +202,33 @@ extern CGError CGSSetWorkspace(const CGSConnection cid, CGSWorkspace workspace);
 extern CGError CGSSetWorkspaceWithTransition(const CGSConnection cid, CGSWorkspace workspace, CGSTransitionType transition, CGSTransitionOption subtype, float time);
 
 
+
+typedef enum {
+	CGSConnectionNotifyEventUnknown1 = 100,
+	CGSConnectionNotifyEventUnknown2 = 101,
+	CGSConnectionNotifyEventUnknown3 = 102,
+	CGSConnectionNotifyEventUnknown4 = 103,
+	CGSConnectionNotifyEventUnknown5 = 106,
+	CGSConnectionNotifyEventUnknown6 = 107,
+	CGSConnectionNotifyEventUnknown7 = 750,
+	CGSConnectionNotifyEventUnknown8 = 751,
+	CGSWorkspacesDisabledEvent = 761,
+	CGSWorkspacesEnabledEvent = 762,
+	CGSConnectionNotifyEventUnknown9 = 763,
+	CGSConnectionNotifyEventUnknown10 = 764,
+	CGSConnectionNotifyEventUnknown11 = 806,
+	CGSConnectionNotifyEventUnknown12 = 807,
+	CGSWorkspaceChangedEvent = 1401,
+	CGSConnectionNotifyEventUnknown13 = 1409,
+	CGSConnectionNotifyEventUnknown14 = 1410,
+	CGSConnectionNotifyEventUnknown15 = 1411,
+	CGSConnectionNotifyEventUnknown16 = 1412,
+	CGSConnectionNotifyEventUnknown17 = 1500,
+	CGSConnectionNotifyEventUnknown18 = 1501,
+	CGSConnectionNotifyEventUnknown19 = 1700
+} CGSConnectionNotifyEvent;
+
+
 /* Prototype for the Spaces change notification callback.
  *
  * data1 -- returns whatever value is passed to data1 parameter in CGSRegisterConnectionNotifyProc
@@ -209,22 +236,27 @@ extern CGError CGSSetWorkspaceWithTransition(const CGSConnection cid, CGSWorkspa
  * data3 -- indeterminate (always returns the number '4' for me)
  * userParameter -- returns whatever value is passed to userParameter in CGSRegisterConnectionNotifyProc
  */
+
 typedef void (*CGConnectionNotifyProc)(int data1, int data2, int data3, void* userParameter);
 
-/* Register a callback function to receive notifications about when the current Space is changing.
+/* Register a callback function to receive notifications about when
+ the current Space is changing.
  *
  * cid -- Current connection
- * function -- A pointer to the intended callback function (must be in C; cannot be an Objective-C selector)
- * data1 -- indeterminate (this is hard-coded to 0x579 in Spaces.menu...perhpas some kind of event filter code?)
- * userParameter -- pointer to user-defined auxiliary information structure; passed directly to callback proc
+ * function -- A pointer to the intended callback function (must be in
+ C; cannot be an Objective-C selector)
+ * event -- indeterminate (this is hard-coded to 0x579 in
+ Spaces.menu...perhpas some kind of event filter code?) -- use
+ CGSWorkspaceChangedEvent in this for now
+ * userParameter -- pointer to user-defined auxiliary information
+ structure; passed directly to callback proc
  */
 
 // For spaces notifications: CGSRegisterConnectionNotifyProc(_CGSDefaultConnection(), spacesCallback, 1401, (void*)userInfo);
 
-extern CGError CGSRegisterConnectionNotifyProc(const CGSConnection cid, CGConnectionNotifyProc function, int data1, void* userParameter);
-
-
-
+extern CGError CGSRegisterConnectionNotifyProc(const CGSConnection
+                                               cid, CGConnectionNotifyProc function, CGSConnectionNotifyEvent event,
+                                               void* userParameter);
 
 
 # pragma mark Miscellaneous
