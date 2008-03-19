@@ -27,7 +27,7 @@
 		7FCB4D9D0D916CE800E7AB1B /* NSEvent+Gestures.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSEvent+Gestures.h"; sourceTree = "<group>"; };
 		7FCB4D9F0D916CE800E7AB1B /* NSImage+QuickLook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSImage+QuickLook.h"; sourceTree = "<group>"; };
 		7FCB4DA00D916CE800E7AB1B /* NSImage+QuickLook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSImage+QuickLook.m"; sourceTree = "<group>"; };
-		7FCB4DA30D916CE800E7AB1B /* CGSPrivate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CGSPrivate.h; sourceTree = "<group>"; };
+		7FCB4DA30D916CE800E7AB1B /* CGSPrivate.h */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 2; lastKnownFileType = sourcecode.c.h; path = CGSPrivate.h; sourceTree = "<group>"; tabWidth = 2; usesTabs = 0; };
 		7FCB4DA50D916CE800E7AB1B /* CoreDockPrivate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDockPrivate.h; sourceTree = "<group>"; };
 		7FE601420D91931E00336364 /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = /System/Library/Frameworks/CoreServices.framework; sourceTree = "<absolute>"; };
 		7FE601FD0D91933900336364 /* QuickLook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuickLook.framework; path = /System/Library/Frameworks/QuickLook.framework; sourceTree = "<absolute>"; };

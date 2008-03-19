@@ -18,16 +18,12 @@ int main(int argc, char *argv[])
 {
   [NSAutoreleasePool new];
 
-  
-  
   NSLog(@"CALCULATE");
   char result[1024];
-  OSStatus success =  CalculatePerformExpression("pi * 2000", 10, 1, result);
+  OSStatus success =  CalculatePerformExpression("pi * 2000", 100, 1, result);
   NSLog(@"pi*2000 = %d %s", success, result);
   
-  
   NSLog(@"DEFINE");
-  
   NSString *word = @"onomatopoeia";
   NSLog(DCSCopyTextDefinition (NULL, word, CFRangeMake(0, [word length])));
   
