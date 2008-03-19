@@ -1,7 +1,12 @@
+
+
+@interface NSObject (QLPreviewPanelDelegate)
+- (NSRect)previewPanel:(NSPanel*)panel frameForURL:(NSURL*)URL;
+@end
+
 @class QLAnimationWindowEffect;
 
-@interface QLPreviewPanelReserved : NSObject
-{
+@interface QLPreviewPanelReserved : NSObject {
   BOOL ignoreOpenAndClose;
 }
 
@@ -9,6 +14,13 @@
 - (void)setIgnoreOpenAndClose:(BOOL)fp8;
 
 @end
+
+
+typedef enum {
+	QLAppearEffect = 0,
+	QLFadeEffect,			
+	QLZoomEffect			
+} QLPreviewPanelEffect;
 
 
 @interface QLPreviewPanel : NSPanel

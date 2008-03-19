@@ -15,6 +15,10 @@
 //       - Removed unnecessary reliance on CGSPrivate.h
 //   1.0 - Initial release
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+  
 typedef enum {
 	kCoreDockOrientationTop = 1,
 	kCoreDockOrientationBottom = 2,
@@ -60,3 +64,7 @@ extern void CoreDockSetWorkspacesEnabled(Boolean); // Untested: use with caution
 
 extern void CoreDockGetWorkspacesCount(int *rows, int *cols);
 extern void CoreDockSetWorkspacesCount(int rows, int cols);	// Untested: use with caution
+
+#ifdef __cplusplus
+}
+#endif

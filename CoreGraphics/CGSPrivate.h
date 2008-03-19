@@ -23,6 +23,10 @@
 #define CGSWindowID CGSWindow
 #define CGSDefaultConnection _CGSDefaultConnection()
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+  
 typedef int		CGSConnection;
 typedef int		CGSWindow;
 typedef int   CGSWorkspace;
@@ -290,3 +294,7 @@ extern char* CGSCStringValue(CGSValue string);
 //CGSSetWindowTransformsAtPlacement
 //CGSSetWindowListGlobalClipShape
 //extern CGError CGSWindowAddRectToDirtyShape(const CGSConnection cid, const CGSWindow wid, CGRect *rect);
+
+#ifdef __cplusplus
+}
+#endif
