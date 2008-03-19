@@ -16,15 +16,14 @@
 @end
 
 
-typedef enum {
+enum {
 	QLAppearEffect = 0,
 	QLFadeEffect,			
 	QLZoomEffect			
 } QLPreviewPanelEffect;
 
 
-@interface QLPreviewPanel : NSPanel
-{
+@interface QLPreviewPanel : NSPanel {
   QLAnimationWindowEffect *_currentEffect;
   int _openingEffect;
   BOOL _ignorePanelFrameChanges;
@@ -33,9 +32,9 @@ typedef enum {
 }
 
 + (id)sharedPreviewPanel;
-+ (id)_previewPanel;
+//+ (id)_previewPanel;
 + (BOOL)isSharedPreviewPanelLoaded;
-- (id)initWithContentRect:(struct _NSRect)fp8 styleMask:(unsigned int)fp24 backing:(unsigned int)fp28 defer:(BOOL)fp32;
+- (id)initWithContentRect:(NSRect)fp8 styleMask:(unsigned int)fp24 backing:(unsigned int)fp28 defer:(BOOL)fp32;
 - (id)initWithCoder:(id)fp8;
 - (void)dealloc;
 - (BOOL)isOpaque;
@@ -43,11 +42,11 @@ typedef enum {
 - (BOOL)canBecomeMainWindow;
 - (BOOL)shouldIgnorePanelFrameChanges;
 - (BOOL)isOpen;
-- (void)setFrame:(struct _NSRect)fp8 display:(BOOL)fp24 animate:(BOOL)fp28;
-- (id)_subEffectsForWindow:(id)fp8 itemFrame:(struct _NSRect)fp12 transitionWindow:(id *)fp28;
-- (id)_scaleEffectForItemFrame:(struct _NSRect)fp8 transitionWindow:(id *)fp24;
+- (void)setFrame:(NSRect)fp8 display:(BOOL)fp24 animate:(BOOL)fp28;
+- (id)_subEffectsForWindow:(id)fp8 itemFrame:(NSRect)fp12 transitionWindow:(id *)fp28;
+- (id)_scaleEffectForItemFrame:(NSRect)fp8 transitionWindow:(id *)fp24;
 - (void)_invertCurrentEffect;
-- (struct _NSRect)_currentItemFrame;
+- (NSRect)_currentItemFrame;
 - (void)setAutosizesAndCenters:(BOOL)fp8;
 - (BOOL)autosizesAndCenters;
 - (void)makeKeyAndOrderFront:(id)fp8;
@@ -109,11 +108,10 @@ typedef enum {
 - (id)forcedContentTypeUTI;
 - (void)setDocumentURLs:(id)fp8;
 - (void)setDocumentURLs:(id)fp8 preservingDisplayState:(BOOL)fp12;
-- (void)setDocumentURLs:(id)fp8 itemFrame:(struct _NSRect)fp12;
-- (void)setURLs:(id)fp8 itemFrame:(struct _NSRect)fp12;
+- (void)setDocumentURLs:(id)fp8 itemFrame:(NSRect)fp12;
+- (void)setURLs:(id)fp8 itemFrame:(NSRect)fp12;
 - (void)setAutoSizeAndCenterOnScreen:(BOOL)fp8;
 - (void)setShowsAddToiPhoto:(BOOL)fp8;
 - (void)setShowsiChatTheater:(BOOL)fp8;
 - (void)setShowsFullscreen:(BOOL)fp8;
-
 @end
