@@ -20,22 +20,22 @@ extern "C" {
 #endif
   
 typedef enum {
-	kCoreDockOrientationTop = 1,
-	kCoreDockOrientationBottom = 2,
-	kCoreDockOrientationLeft = 3,
-	kCoreDockOrientationRight = 4
+  kCoreDockOrientationTop = 1,
+  kCoreDockOrientationBottom = 2,
+  kCoreDockOrientationLeft = 3,
+  kCoreDockOrientationRight = 4
 } CoreDockOrientation;
 
 typedef enum {
-	kCoreDockPinningStart = 1,
-	kCoreDockPinningMiddle = 2,
-	kCoreDockPinningEnd = 3
+  kCoreDockPinningStart = 1,
+  kCoreDockPinningMiddle = 2,
+  kCoreDockPinningEnd = 3
 } CoreDockPinning;
 
 typedef enum {
-	kCoreDockEffectGenie = 1,
-	kCoreDockEffectScale = 2,
-	kCoreDockEffectSuck = 3
+  kCoreDockEffectGenie = 1,
+  kCoreDockEffectScale = 2,
+  kCoreDockEffectSuck = 3
 } CoreDockEffect;
 
 // Tile size ranges from 0.0 to 1.0.
@@ -63,7 +63,7 @@ extern Boolean CoreDockGetWorkspacesEnabled(void);
 extern void CoreDockSetWorkspacesEnabled(Boolean); // Untested: use with caution
 
 extern void CoreDockGetWorkspacesCount(int *rows, int *cols);
-extern void CoreDockSetWorkspacesCount(int rows, int cols);	// Untested: use with caution
+extern void CoreDockSetWorkspacesCount(int rows, int cols);  // Untested: use with caution
 
 #ifdef __cplusplus
 }
