@@ -36,5 +36,5 @@ enum {                    /* masks for the types of events */
 - (void)beginGestureWithEvent:(NSEvent *)event;
 - (void)endGestureWithEvent:(NSEvent *)event;
 - (unsigned long long)gestureEventMask;
-- (void)setGestureEventMask:(unsigned long long)fp8;
+- (void)setGestureEventMask:(unsigned long long)mask;
 @end

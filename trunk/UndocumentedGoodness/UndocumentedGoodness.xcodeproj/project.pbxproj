@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7FE601430D91931E00336364 /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FE601420D91931E00336364 /* CoreServices.framework */; };
+		7FE601FE0D91933900336364 /* QuickLook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FE601FD0D91933900336364 /* QuickLook.framework */; };
+		7FE602070D91934300336364 /* QuickLookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FE602060D91934300336364 /* QuickLookUI.framework */; };
+		7FE6035C0D91A36100336364 /* Calculate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FE6035B0D91A36100336364 /* Calculate.framework */; };
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
 /* End PBXBuildFile section */
@@ -25,6 +29,12 @@
 		7FCB4DA00D916CE800E7AB1B /* NSImage+QuickLook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSImage+QuickLook.m"; sourceTree = "<group>"; };
 		7FCB4DA30D916CE800E7AB1B /* CGSPrivate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CGSPrivate.h; sourceTree = "<group>"; };
 		7FCB4DA50D916CE800E7AB1B /* CoreDockPrivate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDockPrivate.h; sourceTree = "<group>"; };
+		7FE601420D91931E00336364 /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = /System/Library/Frameworks/CoreServices.framework; sourceTree = "<absolute>"; };
+		7FE601FD0D91933900336364 /* QuickLook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuickLook.framework; path = /System/Library/Frameworks/QuickLook.framework; sourceTree = "<absolute>"; };
+		7FE602060D91934300336364 /* QuickLookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuickLookUI.framework; path = /System/Library/PrivateFrameworks/QuickLookUI.framework; sourceTree = "<absolute>"; };
+		7FE6021C0D91937E00336364 /* DCSPrivate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCSPrivate.h; sourceTree = "<group>"; };
+		7FE603560D91A32400336364 /* CalculatePrivate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalculatePrivate.h; sourceTree = "<group>"; };
+		7FE6035B0D91A36100336364 /* Calculate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Calculate.framework; path = /System/Library/PrivateFrameworks/Calculate.framework; sourceTree = "<absolute>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* UndocumentedGoodness.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UndocumentedGoodness.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -35,6 +45,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */,
+				7FE601430D91931E00336364 /* CoreServices.framework in Frameworks */,
+				7FE601FE0D91933900336364 /* QuickLook.framework in Frameworks */,
+				7FE602070D91934300336364 /* QuickLookUI.framework in Frameworks */,
+				7FE6035C0D91A36100336364 /* Calculate.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +97,8 @@
 				7FCB4D9E0D916CE800E7AB1B /* QuickLook */,
 				7FCB4DA20D916CE800E7AB1B /* CoreGraphics */,
 				7FCB4DA40D916CE800E7AB1B /* CoreDock */,
+				7FE6021B0D91937E00336364 /* Dictionary */,
+				7FE603550D91A32400336364 /* Calculate */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
@@ -112,6 +128,10 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7FE6035B0D91A36100336364 /* Calculate.framework */,
+				7FE602060D91934300336364 /* QuickLookUI.framework */,
+				7FE601FD0D91933900336364 /* QuickLook.framework */,
+				7FE601420D91931E00336364 /* CoreServices.framework */,
 				1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */,
 				1058C7A2FEA54F0111CA2CBB /* Other Frameworks */,
 			);
@@ -171,6 +191,24 @@
 			);
 			name = CoreDock;
 			path = ../CoreDock;
+			sourceTree = SOURCE_ROOT;
+		};
+		7FE6021B0D91937E00336364 /* Dictionary */ = {
+			isa = PBXGroup;
+			children = (
+				7FE6021C0D91937E00336364 /* DCSPrivate.h */,
+			);
+			name = Dictionary;
+			path = ../Dictionary;
+			sourceTree = SOURCE_ROOT;
+		};
+		7FE603550D91A32400336364 /* Calculate */ = {
+			isa = PBXGroup;
+			children = (
+				7FE603560D91A32400336364 /* CalculatePrivate.h */,
+			);
+			name = Calculate;
+			path = ../Calculate;
 			sourceTree = SOURCE_ROOT;
 		};
 /* End PBXGroup section */
@@ -238,6 +276,10 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SYSTEM_LIBRARY_DIR)/PrivateFrameworks\"",
+				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_FIX_AND_CONTINUE = YES;
 				GCC_MODEL_TUNING = G5;
@@ -255,6 +297,10 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SYSTEM_LIBRARY_DIR)/PrivateFrameworks\"",
+				);
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = UndocumentedGoodness_Prefix.pch;

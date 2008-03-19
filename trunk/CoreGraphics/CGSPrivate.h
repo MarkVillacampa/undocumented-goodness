@@ -40,7 +40,6 @@ extern CGSConnection _CGSDefaultConnection(void);
 extern CGError CGSDisableUpdate(CGSConnection cid);
 extern CGError CGSReenableUpdate(CGSConnection cid);
 
-
 #pragma mark Listing Windows
 
 // Get window counts and lists.
@@ -54,8 +53,6 @@ extern CGError CGSGetOnScreenWindowList(const CGSConnection cid, CGSConnection t
 // Per-workspace window counts and lists.
 extern CGError CGSGetWorkspaceWindowCount(const CGSConnection cid, CGSWorkspace workspaceNumber, int *outCount);
 extern CGError CGSGetWorkspaceWindowList(const CGSConnection cid, CGSWorkspace workspaceNumber, int count, int* list, int* outCount);
-
-
 
 #pragma mark Window Manipulation
 
@@ -118,7 +115,6 @@ typedef enum {
 	CGSTagSticky				= 0x0800,		// Appears on all workspaces.
 } CGSWindowTag;
 
-
 // thirtyTwo must = 32 for some reason.
 // tags is a pointer to an array of ints (size 2?). First entry holds window tags.
 extern CGError CGSGetWindowTags(const CGSConnection cid, const CGSWindow wid, CGSWindowTag *tags, int thirtyTwo);
@@ -126,8 +122,6 @@ extern CGError CGSSetWindowTags(const CGSConnection cid, const CGSWindow wid, CG
 extern CGError CGSClearWindowTags(const CGSConnection cid, const CGSWindow wid, CGSWindowTag *tags, int thirtyTwo);
 extern CGError CGSGetWindowEventMask(const CGSConnection cid, const CGSWindow wid, uint32_t *mask);
 extern CGError CGSSetWindowEventMask(const CGSConnection cid, const CGSWindow wid, uint32_t mask);
-
-
 
 # pragma mark Window Warping
 
@@ -138,8 +132,6 @@ typedef struct  {
 
 extern CGError CGSSetWindowWarp(const CGSConnection cid, const CGSWindow wid, int w, int h, CGPointWarp mesh[h][w]);
 
-
-
 # pragma mark Window Core Image Filters
 
 typedef void *CGSWindowFilterRef;
@@ -148,8 +140,6 @@ extern CGError CGSAddWindowFilter(CGSConnection cid, CGSWindowID wid, CGSWindowF
 extern CGError CGSRemoveWindowFilter(CGSConnection cid, CGSWindowID wid, CGSWindowFilterRef filter);
 extern CGError CGSReleaseCIFilter(CGSConnection cid, CGSWindowFilterRef filter);
 extern CGError CGSSetCIFilterValuesFromDictionary(CGSConnection cid, CGSWindowFilterRef filter, CFDictionaryRef filterValues);
-
-
 
 #pragma mark Transitions
 
@@ -186,7 +176,6 @@ typedef enum {
 	CGSInOut							// CGSSwap: old in, new out.
 } CGSTransitionOption;
 
-
 typedef struct {
 	uint32_t unknown1;
 	CGSTransitionType type; 
@@ -199,14 +188,12 @@ extern CGError CGSNewTransition(const CGSConnection cid, const CGSTransitionSpec
 extern CGError CGSInvokeTransition(const CGSConnection cid, int transitionHandle, float duration);
 extern CGError CGSReleaseTransition(const CGSConnection cid, int transitionHandle);
 
-
 #pragma mark Workspaces
 
 extern CGError CGSGetWorkspace(const CGSConnection cid, CGSWorkspace *workspace);
 extern CGError CGSGetWindowWorkspace(const CGSConnection cid, const CGSWindow wid, CGSWorkspace *workspace);
 extern CGError CGSSetWorkspace(const CGSConnection cid, CGSWorkspace workspace);
 extern CGError CGSSetWorkspaceWithTransition(const CGSConnection cid, CGSWorkspace workspace, CGSTransitionType transition, CGSTransitionOption subtype, float time);
-
 
 typedef enum {
 	CGSConnectionNotifyEventUnknown1 = 100,
@@ -233,7 +220,6 @@ typedef enum {
 	CGSConnectionNotifyEventUnknown19 = 1501,
 	CGSConnectionNotifyEventUnknown20 = 1700
 } CGSConnectionNotifyEvent;
-
 
 /* Prototype for the Spaces change notification callback.
  *
@@ -264,7 +250,6 @@ extern CGError CGSRegisterConnectionNotifyProc(const CGSConnection
                                                cid, CGConnectionNotifyProc function, CGSConnectionNotifyEvent event,
                                                void* userParameter);
 
-
 # pragma mark Miscellaneous
 
 // Regions
@@ -286,7 +271,6 @@ extern void *CGSReleaseGenericObj(void*);
 extern CGSValue CGSCreateCStringNoCopy(const char *str); //Normal CFStrings will work
 extern CGSValue CGSCreateCString(const char* str);
 extern char* CGSCStringValue(CGSValue string);
-
 
 // Missing functions
 
