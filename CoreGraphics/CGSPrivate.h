@@ -196,7 +196,7 @@ extern CGError CGSSetWorkspace(const CGSConnection cid, CGSWorkspace workspace);
 extern CGError CGSSetWorkspaceWithTransition(const CGSConnection cid, CGSWorkspace workspace, CGSTransitionType transition, CGSTransitionOption subtype, float time);
 
 typedef enum {
-  CGSConnectionNotifyEventUnknown1 = 100,
+  CGSScreenResolutionChangedEvent = 100,
   CGSConnectionNotifyEventUnknown2 = 101,
   CGSConnectionNotifyEventUnknown3 = 102,
   CGSConnectionNotifyEventUnknown4 = 103,
