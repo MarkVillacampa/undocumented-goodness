@@ -204,8 +204,8 @@ typedef enum {
   CGSClientExitFullscreen = 107,
   CGSConnectionNotifyEventUnknown7 = 750,
   CGSConnectionNotifyEventUnknown8 = 751,
-  CGSWorkspacesDisabledEvent = 761,
-  CGSWorkspacesEnabledEvent = 762,
+  CGSWorkspaceConfigurationDisabledEvent = 761,	// Seems to occur when objects are removed (rows/columns), or disabled
+  CGSWorkspaceConfigurationEnabledEvent = 762,	// Seems to occur when objects are added (rows/columns), or enabled
   CGSConnectionNotifyEventUnknown9 = 763,
   CGSConnectionNotifyEventUnknown10 = 764,
   CGSConnectionNotifyEventUnknown11 = 806,
