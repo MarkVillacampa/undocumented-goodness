@@ -60,7 +60,7 @@ extern float CoreDockGetMagnificationSize(void);
 extern void CoreDockSetMagnificationSize(float newSize);
 
 extern Boolean CoreDockGetWorkspacesEnabled(void);
-extern void CoreDockSetWorkspacesEnabled(Boolean); // Untested: use with caution
+extern void CoreDockSetWorkspacesEnabled(Boolean); // This works, but wipes out all of the other spaces prefs. An alternative is to use the ScriptingBridge which works just fine.
 
 extern void CoreDockGetWorkspacesCount(int *rows, int *cols);
 extern void CoreDockSetWorkspacesCount(int rows, int cols);  // Untested: use with caution
