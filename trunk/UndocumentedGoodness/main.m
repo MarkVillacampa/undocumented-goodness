@@ -25,12 +25,12 @@ int main(int argc, char *argv[])
   
   NSLog(@"DEFINE");
   NSString *word = @"onomatopoeia";
-  NSLog(DCSCopyTextDefinition (NULL, word, CFRangeMake(0, [word length])));
+  NSLog(@"%@", (NSString *)DCSCopyTextDefinition (NULL, (CFStringRef)word, CFRangeMake(0, [word length])));
   
   NSURL *url = [NSURL fileURLWithPath:@"/Library/Dictionaries/New Oxford American Dictionary.dictionary"];
   
   CFTypeRef dictionary = DCSDictionaryCreate((CFURLRef) url);
-  CFArrayRef records =  DCSCopyRecordsForSearchString(dictionary, word, 0, 0);
+  CFArrayRef records =  DCSCopyRecordsForSearchString(dictionary, (CFStringRef)word, 0, 0);
   
   for (id record in (NSArray *)records) {
     NSLog(@"dict %@",  DCSRecordCopyData(record) );
