@@ -1,4 +1,15 @@
+#import <Cocoa/Cocoa.h>
 
+#if !NSINTEGER_DEFINED
+// For people building on 10.4
+#if __LP64__ || NS_BUILD_32_LIKE_64
+typedef long NSInteger;
+typedef unsigned long NSUInteger;
+#else
+typedef int NSInteger;
+typedef unsigned int NSUInteger;
+#endif
+#endif  // NSINTEGER_DEFINED
 
 @interface NSObject (QLPreviewPanelDelegate)
 - (NSRect)previewPanel:(NSPanel*)panel frameForURL:(NSURL*)URL;
@@ -20,12 +31,12 @@ enum {
 	QLAppearEffect = 0,
 	QLFadeEffect,			
 	QLZoomEffect			
-} QLPreviewPanelEffect;
-
+};
+typedef NSInteger QLPreviewPanelEffect;
 
 @interface QLPreviewPanel : NSPanel {
   QLAnimationWindowEffect *_currentEffect;
-  int _openingEffect;
+  QLPreviewPanelEffect _openingEffect;
   BOOL _ignorePanelFrameChanges;
   QLPreviewPanelReserved *_reserved;
   double _openingTime;
@@ -34,7 +45,7 @@ enum {
 + (id)sharedPreviewPanel;
 //+ (id)_previewPanel;
 + (BOOL)isSharedPreviewPanelLoaded;
-- (id)initWithContentRect:(NSRect)fp8 styleMask:(unsigned int)fp24 backing:(unsigned int)fp28 defer:(BOOL)fp32;
+- (id)initWithContentRect:(NSRect)fp8 styleMask:(NSUInteger)fp24 backing:(NSBackingStoreType)fp28 defer:(BOOL)fp32;
 - (id)initWithCoder:(id)fp8;
 - (void)dealloc;
 - (BOOL)isOpaque;
@@ -50,27 +61,27 @@ enum {
 - (void)setAutosizesAndCenters:(BOOL)fp8;
 - (BOOL)autosizesAndCenters;
 - (void)makeKeyAndOrderFront:(id)fp8;
-- (void)makeKeyAndOrderFrontWithEffect:(int)fp8;
-- (void)makeKeyAndGoFullscreenWithEffect:(int)fp8;
-- (void)makeKeyAndOrderFrontWithEffect:(int)fp8 canClose:(BOOL)fp12;
-- (void)_makeKeyAndOrderFrontWithEffect:(int)fp8 canClose:(BOOL)fp12 willOpen:(BOOL)fp16 toFullscreen:(BOOL)fp20;
-- (int)openingEffect;
+- (void)makeKeyAndOrderFrontWithEffect:(QLPreviewPanelEffect)fp8;
+- (void)makeKeyAndGoFullscreenWithEffect:(QLPreviewPanelEffect)fp8;
+- (void)makeKeyAndOrderFrontWithEffect:(QLPreviewPanelEffect)fp8 canClose:(BOOL)fp12;
+- (void)_makeKeyAndOrderFrontWithEffect:(QLPreviewPanelEffect)fp8 canClose:(BOOL)fp12 willOpen:(BOOL)fp16 toFullscreen:(BOOL)fp20;
+- (QLPreviewPanelEffect)openingEffect;
 - (void)closePanel;
 - (void)close;
-- (void)closeWithEffect:(int)fp8;
-- (void)closeWithEffect:(int)fp8 canReopen:(BOOL)fp12;
-- (void)_closeWithEffect:(int)fp8 canReopen:(BOOL)fp12;
+- (void)closeWithEffect:(QLPreviewPanelEffect)fp8;
+- (void)closeWithEffect:(QLPreviewPanelEffect)fp8 canReopen:(BOOL)fp12;
+- (void)_closeWithEffect:(QLPreviewPanelEffect)fp8 canReopen:(BOOL)fp12;
 - (void)windowEffectDidTerminate:(id)fp8;
 - (void)_close:(id)fp8;
 - (void)sendEvent:(id)fp8;
 - (void)selectNextItem;
 - (void)selectPreviousItem;
-- (void)setURLs:(id)fp8 currentIndex:(unsigned int)fp12 preservingDisplayState:(BOOL)fp16;
+- (void)setURLs:(id)fp8 currentIndex:(NSUInteger)fp12 preservingDisplayState:(BOOL)fp16;
 - (void)setURLs:(id)fp8 preservingDisplayState:(BOOL)fp12;
 - (void)setURLs:(id)fp8;
 - (id)URLs;
-- (unsigned int)indexOfCurrentURL;
-- (void)setIndexOfCurrentURL:(unsigned int)fp8;
+- (NSUInteger)indexOfCurrentURL;
+- (void)setIndexOfCurrentURL:(NSUInteger)fp8;
 - (void)setDelegate:(id)fp8;
 - (id)sharedPreviewView;
 - (void)setSharedPreviewView:(id)fp8;
