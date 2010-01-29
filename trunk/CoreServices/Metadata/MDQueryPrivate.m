@@ -8,7 +8,7 @@ Boolean MDQueryPrivateIsSpotlightIndexing(void) {
   BOOL indexing = NO;
   NSArray *spotlightStatus = (NSArray *)_MDCopyIndexingStatus();
   for (NSDictionary *dict in spotlightStatus) {
-    NSNumber *currentlyIndexing = [dict objectForKey:@"FilesInflightScan"];
+    NSNumber *filesInFlight = [dict objectForKey:@"FilesInflightScan"];
     if ([filesInFlight integerValue] != 0) {
       indexing = YES;
       break;
