@@ -11,6 +11,8 @@
 		7FE601FE0D91933900336364 /* QuickLook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FE601FD0D91933900336364 /* QuickLook.framework */; };
 		7FE602070D91934300336364 /* QuickLookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FE602060D91934300336364 /* QuickLookUI.framework */; };
 		7FE6035C0D91A36100336364 /* Calculate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FE6035B0D91A36100336364 /* Calculate.framework */; };
+		8BC770551112481C008B08BD /* MDItemPrivate.c in Sources */ = {isa = PBXBuildFile; fileRef = 8BC770511112481C008B08BD /* MDItemPrivate.c */; };
+		8BC770561112481C008B08BD /* MDQueryPrivate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BC770541112481C008B08BD /* MDQueryPrivate.m */; };
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
 /* End PBXBuildFile section */
@@ -35,6 +37,10 @@
 		7FE6021C0D91937E00336364 /* DCSPrivate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCSPrivate.h; sourceTree = "<group>"; };
 		7FE603560D91A32400336364 /* CalculatePrivate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalculatePrivate.h; sourceTree = "<group>"; };
 		7FE6035B0D91A36100336364 /* Calculate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Calculate.framework; path = /System/Library/PrivateFrameworks/Calculate.framework; sourceTree = "<absolute>"; };
+		8BC770511112481C008B08BD /* MDItemPrivate.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = MDItemPrivate.c; sourceTree = "<group>"; };
+		8BC770521112481C008B08BD /* MDItemPrivate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDItemPrivate.h; sourceTree = "<group>"; };
+		8BC770531112481C008B08BD /* MDQueryPrivate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDQueryPrivate.h; sourceTree = "<group>"; };
+		8BC770541112481C008B08BD /* MDQueryPrivate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDQueryPrivate.m; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* UndocumentedGoodness.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UndocumentedGoodness.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -96,6 +102,7 @@
 				7FCB4D9C0D916CE800E7AB1B /* MultiTouch */,
 				7FCB4D9E0D916CE800E7AB1B /* QuickLook */,
 				7FCB4DA20D916CE800E7AB1B /* CoreGraphics */,
+				8BC7704F1112481C008B08BD /* CoreServices */,
 				7FCB4DA40D916CE800E7AB1B /* CoreDock */,
 				7FE6021B0D91937E00336364 /* Dictionary */,
 				7FE603550D91A32400336364 /* Calculate */,
@@ -211,6 +218,26 @@
 			path = ../Calculate;
 			sourceTree = SOURCE_ROOT;
 		};
+		8BC7704F1112481C008B08BD /* CoreServices */ = {
+			isa = PBXGroup;
+			children = (
+				8BC770501112481C008B08BD /* Metadata */,
+			);
+			name = CoreServices;
+			path = ../CoreServices;
+			sourceTree = SOURCE_ROOT;
+		};
+		8BC770501112481C008B08BD /* Metadata */ = {
+			isa = PBXGroup;
+			children = (
+				8BC770511112481C008B08BD /* MDItemPrivate.c */,
+				8BC770521112481C008B08BD /* MDItemPrivate.h */,
+				8BC770531112481C008B08BD /* MDQueryPrivate.h */,
+				8BC770541112481C008B08BD /* MDQueryPrivate.m */,
+			);
+			path = Metadata;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -265,6 +292,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				8D11072D0486CEB800E47090 /* main.m in Sources */,
+				8BC770551112481C008B08BD /* MDItemPrivate.c in Sources */,
+				8BC770561112481C008B08BD /* MDQueryPrivate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
