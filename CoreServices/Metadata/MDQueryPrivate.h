@@ -11,7 +11,6 @@ extern "C" {
 
 // Type of the callback function used to enumerate the group of a result based
 // on it's attributes.  
-// 'query' The MDQuery instance.
 // 'attrs' A C array of attribute values for a result. The values occur in the
 // array in the same order and position that the attribute names were passed in
 // the valueAttrs array when the query was created. The values of the attributes
@@ -20,7 +19,7 @@ extern "C" {
 // 'context' The user-defined context parameter given to 
 //  _MDQuerySetGroupComparator().
 //  Returns The function must return an index for a group to place the result in.
-typedef CFIndex (*MDQueryPrivateGroupComparatorFunction)(const CFTypeRef attrs[], MDQueryRef query, void *context);
+typedef CFIndex (*MDQueryPrivateGroupComparatorFunction)(const CFTypeRef attrs[], void *context);
 
 // Converts a raw query string with operators into a valid spotlight query string.
 extern CFStringRef _MDQueryCreateQueryString(CFAllocatorRef allocator, CFStringRef query);
