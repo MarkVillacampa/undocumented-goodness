@@ -9,7 +9,7 @@
 extern "C" {
 #endif
 
-typedef enum {
+enum {
   MDItemPrivateGroupFirst= 1,
   MDItemPrivateGroupMessage = 1,
   MDItemPrivateGroupContact = 2,
@@ -26,7 +26,9 @@ typedef enum {
   MDItemPrivateGroupImage = 13,
   MDItemPrivateGroupDocument = 14,
   MDItemPrivateGroupLast = 15,
-} MDItemPrivateGroup;
+}; 
+  
+typedef CFOptionFlags MDItemPrivateGroup;
 
 // Spotlight Group ID.
 extern const CFStringRef kMDItemPrivateAttributeGroupId;
